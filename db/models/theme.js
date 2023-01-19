@@ -1,23 +1,24 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class Theme extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
+    static associate({ Statistic, Cards }) {
+      this.hasMany(Statistic, {
+        foreignKey: "theme_id",
+      });
+      this.hasMany(Cards, {
+        foreignKey: "theme_id",
+      });
     }
   }
-  Theme.init({
-    topic: DataTypes.TEXT
-  }, {
-    sequelize,
-    modelName: 'Theme',
-  });
+  Theme.init(
+    {
+      topic: DataTypes.TEXT,
+    },
+    {
+      sequelize,
+      modelName: "Theme",
+    }
+  );
   return Theme;
 };
