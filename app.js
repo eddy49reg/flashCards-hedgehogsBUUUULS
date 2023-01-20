@@ -21,5 +21,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/cars', carsRoute);
 
 app.listen(PORT, () => {
-  console.log(Сервер запущу на ${PORT}щу);
+  console.log(`Сервер запущу на ${PORT}щу`);
 });
