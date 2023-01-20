@@ -1,7 +1,6 @@
 {
   "name": "flashcardsbulls",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -17,7 +16,8 @@
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react": "^7.32.1",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "prettier": "^2.8.3"
   },
   "dependencies": {
     "@babel/core": "^7.20.12",
@@ -32,5 +32,14 @@
     "react-dom": "^18.2.0",
     "sequelize": "^6.28.0",
     "sequelize-cli": "^6.5.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eddy49reg/flashCards-hedgehogsBUUUULS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eddy49reg/flashCards-hedgehogsBUUUULS/issues"
+  },
+  "homepage": "https://github.com/eddy49reg/flashCards-hedgehogsBUUUULS#readme",
+  "description": ""
 }
