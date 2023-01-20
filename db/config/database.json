@@ -1,8 +1,8 @@
 {
   "development": {
-    "username": "roman",
-    "password": "123",
-    "database": "flash",
+    "username": "postgres",
+    "password": "1417",
+    "database": "flashka",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }

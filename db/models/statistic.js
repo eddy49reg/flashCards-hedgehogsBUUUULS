@@ -1,5 +1,5 @@
-"use strict";
-const { Model } = require("sequelize");
+const { Model } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Statistic extends Model {
     static associate({ User, Theme }) {
@@ -14,25 +14,23 @@ module.exports = (sequelize, DataTypes) => {
       try_count: DataTypes.INTEGER,
       user_id: {
         type: DataTypes.INTEGER,
-        primaryKey: true,
         references: {
-          model: "User",
-          key: "id",
+          model: 'Users',
+          key: 'id',
         },
       },
       theme_id: {
         type: DataTypes.INTEGER,
-        primaryKey: true,
         references: {
-          model: "Theme",
-          key: "id",
+          model: 'Themes',
+          key: 'id',
         },
       },
     },
     {
       sequelize,
-      modelName: "Statistic",
-    }
+      modelName: 'Statistic',
+    },
   );
   return Statistic;
 };

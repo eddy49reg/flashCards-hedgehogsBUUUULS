@@ -3,13 +3,14 @@ const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
 const ssr = require('./middleware/ssr');
+const Authentication = require('./views/Authentication');
 
 const app = express();
 
 const PORT = 3000;
 
 const mainRoute = require('./routes/main.route');
-// const usersRoute = require('./routes/users.route');
+// const authentication = require('./routes/authentication.route');
 // const carsRoute = require('./routes/cars.route');
 
 app.use(express.urlencoded({ extended: true }));
@@ -18,8 +19,16 @@ app.use(ssr);
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', mainRoute);
-// app.use('/users', usersRoute);
+// app.use('/authentication', authentication);
 // app.use('/cars', carsRoute);
+
+// app.get('/', (req, res) => {
+//   res.end();
+// });
+
+// app.get('/authentication', (req, res) => {
+//   res.renderComponent(Authentication);
+// });
 
 app.listen(PORT, () => {
   console.log(`Сервер запущу на ${PORT}щу`);
