@@ -8,26 +8,47 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate({ Theme }) {
-      this.belongsTo(Theme);
+      this.belongsTo(Theme, {
+        foreignKey: 'theme_id',
+      });
     }
   }
   Card.init(
     {
-      question: DataTypes.TEXT,
-      answer: DataTypes.TEXT,
+      id: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: DataTypes.INTEGER,
+      },
+      question: {
+        type: DataTypes.TEXT,
+      },
+      answer: {
+        type: DataTypes.TEXT,
+      },
       theme_id: {
         type: DataTypes.INTEGER,
-        primaryKey: true,
         references: {
           model: 'Themes',
           key: 'id',
         },
       },
+      createdAt: {
+        allowNull: false,
+        type: DataTypes.DATE,
+      },
+      updatedAt: {
+        allowNull: false,
+        type: DataTypes.DATE,
+      },
     },
     {
       sequelize,
       modelName: 'Card',
-    }
+    },
+
+
   );
   return Card;
 };

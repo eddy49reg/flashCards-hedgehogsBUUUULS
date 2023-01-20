@@ -1,6 +1,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface) {
+
   const themes = [
       {
         topic: 'Аниме',
@@ -15,6 +16,7 @@ module.exports = {
         link: 'https://cs11.pikabu.ru/images/previews_comm/2019-10_5/1571731731178018643.jpg',
       },
     ];
+
     const data = themes.map((el) => ({
       topic: el.topic,
       link: el.link,

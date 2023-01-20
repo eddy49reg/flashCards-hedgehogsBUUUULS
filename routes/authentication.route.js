@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const Authentication = require('../views/Authentication');
-// const Layout = require('../views/Layout');
-// const Main = require('../views/Main');
+
+
 const { User } = require('../db/models');
 
 router.get('/', (req, res) => {
@@ -9,7 +9,6 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-  // console.log(req.body);
   try {
     const { name, password } = req.body;
     if (name && password) {
@@ -17,10 +16,9 @@ router.post('/', async (req, res) => {
       if (!user) {
         const newUser = await User.create({ name, password });
         res.app.locals.name = name;
-        // const currentName = res.app.locals.name;
-        // res.renderComponent(Main, { name });
+
         if (newUser.name && newUser.password) {
-          // console.log(newUser);
+
 
           res.redirect('/main');
         }
@@ -35,3 +33,4 @@ router.post('/', async (req, res) => {
 });
 
 module.exports = router;
+

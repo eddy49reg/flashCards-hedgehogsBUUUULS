@@ -16,7 +16,6 @@ module.exports = {
       },
       theme_id: {
         type: Sequelize.INTEGER,
-        primaryKey: true,
         references: {
           model: 'Themes',
           key: 'id',
@@ -32,6 +31,7 @@ module.exports = {
       },
     });
   },
+
   async down(queryInterface) {
     await queryInterface.dropTable('Cards');
   },

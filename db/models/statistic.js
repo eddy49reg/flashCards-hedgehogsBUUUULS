@@ -14,7 +14,6 @@ module.exports = (sequelize, DataTypes) => {
       try_count: DataTypes.INTEGER,
       user_id: {
         type: DataTypes.INTEGER,
-        primaryKey: true,
         references: {
           model: 'Users',
           key: 'id',
@@ -22,7 +21,6 @@ module.exports = (sequelize, DataTypes) => {
       },
       theme_id: {
         type: DataTypes.INTEGER,
-        primaryKey: true,
         references: {
           model: 'Themes',
           key: 'id',
@@ -32,7 +30,9 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: 'Statistic',
-    }
+
+    },
+
   );
   return Statistic;
 };
