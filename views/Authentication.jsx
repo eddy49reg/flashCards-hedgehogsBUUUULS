@@ -44,6 +44,7 @@ module.exports = function Authentication({ title }) {
           </button>
         </form>
       </div>
+
     </Layout>
   );
 };

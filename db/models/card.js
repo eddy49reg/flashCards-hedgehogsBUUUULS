@@ -47,6 +47,8 @@ module.exports = (sequelize, DataTypes) => {
       sequelize,
       modelName: 'Card',
     },
+
+
   );
   return Card;
 };

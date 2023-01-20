@@ -5,6 +5,7 @@ const { Card } = require('../db/models');
 const Question = require('../views/Question');
 // res.redirect('/authentication');
 
+
 router.get('/', async (req, res) => {
   const themes = await Theme.findAll({ raw: true });
   // console.log(themes);
@@ -31,6 +32,7 @@ router.post('/:cardId', async (req, res) => {
     return res.json({ status: true, message: 'Огонь ответ верный' });
   }
   return res.json({ status: false, message: 'Неправда' });
+
 });
 
 module.exports = router;

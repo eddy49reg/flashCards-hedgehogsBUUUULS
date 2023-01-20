@@ -1,9 +1,10 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-module.exports = function Main({ title, themes }) {
+
+module.exports = function Main({ title, themes, name }) {
   return (
-    <Layout title={title}>
+    <Layout title={title} name={name}>
       <div className="containerCard">
         {themes.map((theme) => (
           <div className="buttonDiv" key={theme.id} data-id={theme.id}>
@@ -17,4 +18,5 @@ module.exports = function Main({ title, themes }) {
       </div>
     </Layout>
   );
+
 };
