@@ -1,7 +1,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface) {
-    const themes = [
+  const themes = [
       {
         topic: 'Аниме',
         link: 'https://kartinkof.club/uploads/posts/2022-03/thumbs/1648613480_2-kartinkof-club-p-anime-smeshnie-kartinki-2.jpg',
