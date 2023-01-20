@@ -1,10 +1,6 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-module.exports = function Main({ title }) {
-  return (
-    <Layout title={title}>
-      <h1>AUAUUAUAUAUU</h1>
-    </Layout>
-  );
+module.exports = function Main({ title, name }) {
+  return <Layout title={title} name={name}></Layout>;
 };

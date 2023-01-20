@@ -5,7 +5,7 @@ module.exports = function Authentication({ title }) {
   return (
     <Layout title={title}>
       <h2>{title}</h2>
-      <form action="/authentication" method="post" id="authentication_form">
+      <form action="/" method="post" id="authentication_form">
         <div className="mb-3">
           <label className="form-label">
             Name

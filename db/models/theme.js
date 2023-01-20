@@ -1,13 +1,13 @@
-"use strict";
-const { Model } = require("sequelize");
+const { Model } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Theme extends Model {
-    static associate({ Statistic, Cards }) {
+    static associate({ Statistic, Card }) {
       this.hasMany(Statistic, {
-        foreignKey: "theme_id",
+        foreignKey: 'theme_id',
       });
-      this.hasMany(Cards, {
-        foreignKey: "theme_id",
+      this.hasMany(Card, {
+        foreignKey: 'theme_id',
       });
     }
   }
@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       sequelize,
-      modelName: "Theme",
+      modelName: 'Theme',
     }
   );
   return Theme;
